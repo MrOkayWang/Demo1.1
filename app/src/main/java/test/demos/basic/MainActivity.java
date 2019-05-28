@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import test.demos.basic.frag.ContainerActivity;
 import test.demos.basic.jump.AActivity;
 
 public class MainActivity extends AppCompatActivity  {
     private Button mBtn_TurnA;
+    private Button mBtn_ToFrag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,12 +19,15 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
 
         mBtn_TurnA=findViewById(R.id.btn_JumpA);
+        mBtn_ToFrag=findViewById(R.id.btn_ToFrag);
           onClickListener();
     }
 
     public void onClickListener(){
         OnClick onClick =new OnClick();
         mBtn_TurnA.setOnClickListener(onClick);
+        mBtn_ToFrag.setOnClickListener(onClick);
+
     }
 
 
@@ -34,6 +39,9 @@ public class MainActivity extends AppCompatActivity  {
             switch (v.getId()){
                 case R.id.btn_JumpA:
                     intent= new Intent(MainActivity.this, AActivity.class);
+                    break;
+                case R.id.btn_ToFrag:
+                    intent=new Intent(MainActivity.this, ContainerActivity.class);
                     break;
             }
             startActivity(intent);
