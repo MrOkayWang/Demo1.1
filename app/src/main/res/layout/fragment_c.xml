@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/tb_toobar"
+        android:layout_height="wrap_content"
+        android:background="#388E8E">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/tv_inToolbar"
+            android:gravity="center"/>
+    </android.support.v7.widget.Toolbar>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_changeToDfrag"
+        android:text="转换到DFragment"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:paddingTop="20dp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_changeTextView"
+        android:text="改变TextView的文字"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:paddingTop="20dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:id="@+id/tv_wenzi"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
