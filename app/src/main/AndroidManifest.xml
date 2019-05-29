@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".frag.ContainerActivity" android:label="包含Fragment的界面"></activity>
+        <activity android:name=".frag.ContainerActivity2" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name=".frag.ContainerActivity"
+            android:label="包含Fragment的界面" />
         <activity
             android:name=".jump.BActivity"
             android:label="B" />

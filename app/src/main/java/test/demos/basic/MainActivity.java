@@ -7,11 +7,13 @@ import android.view.View;
 import android.widget.Button;
 
 import test.demos.basic.frag.ContainerActivity;
+import test.demos.basic.frag.ContainerActivity2;
 import test.demos.basic.jump.AActivity;
 
 public class MainActivity extends AppCompatActivity  {
     private Button mBtn_TurnA;
-    private Button mBtn_ToFrag;
+    private Button mBtn_ToFrag,mBtn_ToFrag2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity  {
 
         mBtn_TurnA=findViewById(R.id.btn_JumpA);
         mBtn_ToFrag=findViewById(R.id.btn_ToFrag);
+        mBtn_ToFrag2=findViewById(R.id.btn_ToFrag2);
           onClickListener();
     }
 
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity  {
         OnClick onClick =new OnClick();
         mBtn_TurnA.setOnClickListener(onClick);
         mBtn_ToFrag.setOnClickListener(onClick);
+        mBtn_ToFrag2.setOnClickListener(onClick);
 
     }
 
@@ -42,6 +46,9 @@ public class MainActivity extends AppCompatActivity  {
                     break;
                 case R.id.btn_ToFrag:
                     intent=new Intent(MainActivity.this, ContainerActivity.class);
+                    break;
+                case R.id.btn_ToFrag2:
+                    intent=new Intent(MainActivity.this, ContainerActivity2.class);
                     break;
             }
             startActivity(intent);
