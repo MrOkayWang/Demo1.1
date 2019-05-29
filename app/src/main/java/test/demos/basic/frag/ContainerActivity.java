@@ -29,8 +29,9 @@ public class ContainerActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fl_change,bFragemnt).commitAllowingStateLoss();
                 }
             });
-
-            aFragemnt=new AFragemnt();
+          //实例化 AFragment
+//            aFragemnt=new AFragemnt();
+            aFragemnt=AFragemnt.newInstance("我是参数");
             getSupportFragmentManager().beginTransaction().add(R.id.fl_change,aFragemnt).commitAllowingStateLoss();
 
         }
