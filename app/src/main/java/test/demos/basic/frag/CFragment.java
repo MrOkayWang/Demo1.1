@@ -1,5 +1,6 @@
 package test.demos.basic.frag;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -14,10 +15,12 @@ import android.widget.TextView;
 import test.demos.basic.R;
 
 public class CFragment extends Fragment {
-    private Button mBtn_changeToDFrag,mBtn_changeText;
+    private Button mBtn_changeToDFrag,mBtn_changeText,mBtn_changeActivtyTv;
     private TextView mTv_wenzi,mTV_inToolBar;
     private DFragment dFragment;
     private Toolbar mTb_toolbar;
+    //想调用ContainerActivity2中重写的onClick方法，要在onAattach方法中将context赋值给listener
+    private IOnMessageClick listener;
 
     //更改TextView文字的方法：
    public static CFragment changeText(String string){
@@ -27,7 +30,11 @@ public class CFragment extends Fragment {
       cFragment.setArguments(bundle);
       return cFragment;
    }
-
+   //定义一个接口，用于实现对Activity的信息传递
+    //要让Activity实现这个接口并且重写onClick方法
+   public interface IOnMessageClick{
+       void onClick(String text);
+   }
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,6 +51,15 @@ public class CFragment extends Fragment {
         mTV_inToolBar=view.findViewById(R.id.tv_inToolbar);
         mTV_inToolBar.setText("CFragment");
 
+        //改变CotainerActivity2的Textview的文字
+        mBtn_changeActivtyTv=view.findViewById(R.id.btn_changeActivityTv);
+        //为这个Button添加点击事件调用listener.onClick(String text)方法
+        mBtn_changeActivtyTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick("点击了“改变上面TextView的文字”按钮改变的文字");
+            }
+        });
 
 
         mTv_wenzi=view.findViewById(R.id.tv_wenzi);
@@ -74,8 +90,18 @@ public class CFragment extends Fragment {
         mBtn_changeText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mTv_wenzi.setText("这是CFragement改变之后的文字！！");
+                mTv_wenzi.setText("这是CFragement点击按钮改变之后的文字！！");
             }
         });
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            listener= (IOnMessageClick) context;
+        }catch (ClassCastException e){
+            throw new ClassCastException("必须在ContainerActivity2中实现IOnMessageClick这个接口");
+        }
     }
 }

@@ -18,6 +18,13 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/btn_changeActivityTv"
+        android:layout_gravity="center"
+        android:text="改变上面TextView的文字"
+        android:textAllCaps="false"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/btn_changeToDfrag"
         android:text="转换到DFragment"
         android:textAllCaps="false"

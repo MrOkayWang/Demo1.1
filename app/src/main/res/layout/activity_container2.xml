@@ -2,7 +2,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <TextView
+        android:id="@+id/tv_title_actcontainer2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="20sp"
+        android:text="这是改变前的文字"
+        android:textColor="#000"
+        />
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
