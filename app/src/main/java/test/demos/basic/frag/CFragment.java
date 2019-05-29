@@ -60,8 +60,10 @@ public class CFragment extends Fragment {
                 }
                 Fragment fragment=getFragmentManager().findFragmentByTag("c");
                 if (fragment!=null){
+                    //为了返回CFragment时保留离开时的状态 ，先hide再add
                     getFragmentManager().beginTransaction().hide(fragment).add(R.id.fl_fillall,dFragment).addToBackStack(null).commitAllowingStateLoss();
                 }else {
+                    //replace=remove + add
                     getFragmentManager().beginTransaction().replace(R.id.fl_fillall,dFragment).addToBackStack(null).commitAllowingStateLoss();
                 }
 
