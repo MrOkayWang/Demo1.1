@@ -9,8 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".event.EventActivity" android:label="事件处理"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity android:name=".datastroage.SharePreferencesActivity" android:label="SharePreferences"></activity>
+        <activity
+            android:name=".datastroage.DataStroageActivity"
+            android:label="数据储存" />
+        <activity android:name=".event.HandlerActivity" />
+        <activity
+            android:name=".event.EventActivity"
+            android:label="事件处理"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".frag.ContainerActivity2"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />

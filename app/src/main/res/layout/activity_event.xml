@@ -11,4 +11,13 @@
         android:text="点击我显示toast"
         android:onClick="toast"
         />
+       <!--这个按钮用到了Handler-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_jumpToHandler"
+        android:layout_gravity="center"
+        android:text="跳转到HandlerAcvity"
+        android:textAllCaps="false"
+        />
 </LinearLayout>
